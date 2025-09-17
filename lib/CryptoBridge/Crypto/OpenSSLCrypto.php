@@ -10,7 +10,7 @@ use Sop\CryptoTypes\AlgorithmIdentifier\Cipher\BlockCipherAlgorithmIdentifier;
 use Sop\CryptoTypes\AlgorithmIdentifier\Cipher\CipherAlgorithmIdentifier;
 use Sop\CryptoTypes\AlgorithmIdentifier\Cipher\RC2CBCAlgorithmIdentifier;
 use Sop\CryptoTypes\AlgorithmIdentifier\Feature\SignatureAlgorithmIdentifier;
-use Sop\CryptoTypes\Asymmetric\PrivateKeyInfo;
+use Sop\CryptoTypes\Asymmetric\OneAsymmetricKey;
 use Sop\CryptoTypes\Asymmetric\PublicKeyInfo;
 use Sop\CryptoTypes\Signature\Signature;
 
@@ -59,7 +59,7 @@ class OpenSSLCrypto extends Crypto
     /**
      * {@inheritdoc}
      */
-    public function sign(string $data, PrivateKeyInfo $privkey_info,
+    public function sign(string $data, OneAsymmetricKey $privkey_info,
         SignatureAlgorithmIdentifier $algo): Signature
     {
         $this->_checkSignatureAlgoAndKey($algo, $privkey_info->algorithmIdentifier());
