@@ -6,7 +6,7 @@ namespace Sop\CryptoBridge;
 
 use Sop\CryptoTypes\AlgorithmIdentifier\Cipher\CipherAlgorithmIdentifier;
 use Sop\CryptoTypes\AlgorithmIdentifier\Feature\SignatureAlgorithmIdentifier;
-use Sop\CryptoTypes\Asymmetric\PrivateKeyInfo;
+use Sop\CryptoTypes\Asymmetric\OneAsymmetricKey;
 use Sop\CryptoTypes\Asymmetric\PublicKeyInfo;
 use Sop\CryptoTypes\Signature\Signature;
 
@@ -19,12 +19,12 @@ abstract class Crypto
      * Sign data with given algorithm using given private key.
      *
      * @param string                       $data         Data to sign
-     * @param PrivateKeyInfo               $privkey_info Private key
+     * @param OneAsymmetricKey             $privkey_info Private key
      * @param SignatureAlgorithmIdentifier $algo         Signature algorithm
      *
      * @return Signature
      */
-    abstract public function sign(string $data, PrivateKeyInfo $privkey_info,
+    abstract public function sign(string $data, OneAsymmetricKey $privkey_info,
         SignatureAlgorithmIdentifier $algo): Signature;
 
     /**
